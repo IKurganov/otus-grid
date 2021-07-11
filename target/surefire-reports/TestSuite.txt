@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 5, Errors: 0, Skipped: 10, Time elapsed: 1.575 s <<< FAILURE! - in TestSuite
+ru.otus.qa.automation.tests.testng.Test03.setUp  Time elapsed: 1.33 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Command duration or timeout: 123 milliseconds
+	at ru.otus.qa.automation.tests.testng.Test03.setUp(Test03.java:17)
+Caused by: org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LP-RU00535.local', ip: 'fe80:0:0:0:4bf:58c7:fa13:808f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: unknown
+
+ru.otus.qa.automation.tests.testng.Test02.setUp  Time elapsed: 1.331 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Command duration or timeout: 123 milliseconds
+	at ru.otus.qa.automation.tests.testng.Test02.setUp(Test02.java:17)
+Caused by: org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LP-RU00535.local', ip: 'fe80:0:0:0:4bf:58c7:fa13:808f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: unknown
+
+ru.otus.qa.automation.tests.testng.Test01.setUp  Time elapsed: 1.331 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Command duration or timeout: 123 milliseconds
+	at ru.otus.qa.automation.tests.testng.Test01.setUp(Test01.java:17)
+Caused by: org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LP-RU00535.local', ip: 'fe80:0:0:0:4bf:58c7:fa13:808f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: unknown
+
+ru.otus.qa.automation.tests.testng.Test04.setUp  Time elapsed: 1.332 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Command duration or timeout: 123 milliseconds
+	at ru.otus.qa.automation.tests.testng.Test04.setUp(Test04.java:17)
+Caused by: org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LP-RU00535.local', ip: 'fe80:0:0:0:4bf:58c7:fa13:808f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: unknown
+
+ru.otus.qa.automation.tests.testng.Test05.setUp  Time elapsed: 1.333 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Command duration or timeout: 123 milliseconds
+	at ru.otus.qa.automation.tests.testng.Test05.setUp(Test05.java:17)
+Caused by: org.openqa.selenium.WebDriverException: 
+Error forwarding the new session cannot find : Capabilities {browserName: chrome, platform: WIN8, version: 91}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LP-RU00535.local', ip: 'fe80:0:0:0:4bf:58c7:fa13:808f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: unknown
+

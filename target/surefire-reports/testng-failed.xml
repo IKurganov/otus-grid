@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="10" parallel="methods" name="Failed suite [Suite1]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="10" parallel="methods" name="Regression Otus(failed)" verbose="0">
+    <classes>
+      <class name="ru.otus.qa.automation.tests.testng.Test02">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="test02"/>
+        </methods>
+      </class> <!-- ru.otus.qa.automation.tests.testng.Test02 -->
+      <class name="ru.otus.qa.automation.tests.testng.Test05">
+        <methods>
+          <include name="setUp"/>
+          <include name="test05"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.otus.qa.automation.tests.testng.Test05 -->
+      <class name="ru.otus.qa.automation.tests.testng.Test03">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="test03"/>
+        </methods>
+      </class> <!-- ru.otus.qa.automation.tests.testng.Test03 -->
+      <class name="ru.otus.qa.automation.tests.testng.Test04">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="test04"/>
+        </methods>
+      </class> <!-- ru.otus.qa.automation.tests.testng.Test04 -->
+      <class name="ru.otus.qa.automation.tests.testng.Test01">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="test01"/>
+        </methods>
+      </class> <!-- ru.otus.qa.automation.tests.testng.Test01 -->
+    </classes>
+  </test> <!-- Regression Otus(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
