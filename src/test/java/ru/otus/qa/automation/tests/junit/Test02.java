@@ -15,8 +15,6 @@ public class Test02 {
     @Before
     public void setUp() {
         driver = initDriver();
-        mainPage = new MainPage(driver);
-        driver.get("https://otus.ru");
     }
 
     @After
@@ -25,8 +23,11 @@ public class Test02 {
     }
 
     @Test
-    public void Test02Button(){
+    public void Test03Button() throws InterruptedException {
+        mainPage = new MainPage(driver);
+        driver.get("https://otus.ru");
         mainPage
                 .someButton();
+        Thread.sleep(10000);
     }
 }
