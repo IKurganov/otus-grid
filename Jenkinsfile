@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                sh './infrastructure/start_selenoid.sh'
+                sh 'infrastructure/start_selenoid.sh'
             }
         }
         stage('Backup and Reports') {
