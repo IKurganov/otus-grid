@@ -27,7 +27,8 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                sh './start_selenoid.sh'
+            def scriptDir = WORKSPACE + '/infrastructure'
+                sh "$scriptDir/start_selenoid.sh"
             }
         }
         stage('Backup and Reports') {
