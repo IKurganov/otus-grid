@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                sh './infrastructure/build.sh'
+                sh 'infrastructure/build.sh'
             }
         }
         stage('Backup and Reports') {
