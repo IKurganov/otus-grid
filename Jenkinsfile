@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                sh 'C:/Users/IKurganov/Jenkins/workspace/WebHook-2/justdoit.sh'
+                sh 'mvn clean test'
             }
         }
         stage('Backup and Reports') {
