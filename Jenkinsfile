@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                sh 'mvn clean test'
+                bat 'mvn clean test'
             }
         }
         stage('Backup and Reports') {
