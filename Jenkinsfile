@@ -27,8 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                bat 'cd ./infrastructure'
-                bat '/start_selenoid.bat'
+                bat 'justdoit.bat'
             }
         }
         stage('Backup and Reports') {
