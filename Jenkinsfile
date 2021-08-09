@@ -27,6 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
+                slackSend (color: '#FFFF00', message: "TESTS ARE GOOOOINGGGG: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                 bat 'justdoit.bat'
             }
         }
@@ -38,15 +39,11 @@ pipeline {
                 always {
                   script {
                     if (currentBuild.currentResult == 'SUCCESS') {
-                    steps{
+                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                    ([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
-                    }
                     } else {
-                    steps{
+                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                    ([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
-                    }
                     }
 
 
