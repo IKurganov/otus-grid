@@ -40,14 +40,15 @@ pipeline {
                     if (currentBuild.currentResult == 'SUCCESS') {
                     steps{
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                    $class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true
+                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     }
                     } else {
                     steps{
                     slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                    $class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true
+                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     }
                     }
+
 
                     // Формирование отчета
                     allure([
@@ -70,8 +71,6 @@ pipeline {
                     // Текст оповещения
                     def message = "${currentBuild.currentResult}: Job ${env.JOB_NAME}, build ${env.BUILD_NUMBER}, branch ${branch}\nTest Summary - ${summary.totalCount}, Failures: ${summary.failCount}, Skipped: ${summary.skipCount}, Passed: ${summary.passCount}\nMore info at: ${env.BUILD_URL}"
                     println("message= " + message)
-
-                    slackSend (color: '#00FF00', message: "END THIS BUILD: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                   }
                 }
             }
