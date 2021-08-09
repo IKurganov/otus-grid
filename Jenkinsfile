@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Run maven clean test') {
             steps {
-                bat 'mvn clean test'
+                bat 'justdoit.bat'
             }
         }
         stage('Backup and Reports') {
