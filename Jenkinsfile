@@ -39,10 +39,10 @@ pipeline {
                 always {
                   script {
                     if (currentBuild.currentResult == 'SUCCESS') {
-                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
+                    step([$class: 'Mailer', notify: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                     } else {
-                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
+                    step([$class: 'Mailer', notify: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                     }
 
