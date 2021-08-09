@@ -39,19 +39,13 @@ pipeline {
                 always {
                   script {
                     if (currentBuild.currentResult == 'SUCCESS') {
-                    emailext (
-                    subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                          body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-                            <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-                    recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true )
+                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                    emailext attachLog: true, body: 'About building - see log', recipientProviders: [buildUser()], subject: 'build is done'
                     } else {
-                    emailext (
-                    subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                    body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-                            <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-                    recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true )
+                    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                    emailext attachLog: true, body: 'About building - see log', recipientProviders: [buildUser()], subject: 'build is failed'
                     }
 
 
