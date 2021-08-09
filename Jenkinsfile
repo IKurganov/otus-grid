@@ -58,7 +58,7 @@ pipeline {
                       reportBuildPolicy: 'ALWAYS',
                       results: [[path: 'target/allure-results']]
                     ])
-                    println('allure report created succesfully')
+                    println('allure report created succesfully!')
 
                     // Узнаем ветку репозитория
                     def branch = bat(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD\n').trim().tokenize().last()
