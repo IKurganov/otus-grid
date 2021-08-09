@@ -41,13 +41,14 @@ pipeline {
                     if (currentBuild.currentResult == 'SUCCESS') {
                     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                    emailext attachLog: true, body: 'About building - see log', recipientProviders: [buildUser()], subject: 'build is done'
                     } else {
                     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "IKurganov@sportmaster.ru", sendToIndividuals: true])
                     slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                    emailext attachLog: true, body: 'About building - see log', recipientProviders: [buildUser()], subject: 'build is failed'
                     }
 
+                emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
 
                     // Формирование отчета
                     allure([
