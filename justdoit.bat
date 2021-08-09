@@ -1,2 +1,2 @@
 cd ./infrastructure
-sh ./start_selenoid.sh
+./start_selenoid.bat
